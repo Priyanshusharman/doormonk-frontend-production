@@ -12,9 +12,9 @@ const AppointmentItem2 = ({ appointment,date }) => {
             },
             body:JSON.stringify({id:id,status:status},)
         });
-        console.log("Updating an appointment")
+
         const appointment = response.json()
-        console.log(appointment)
+
         alert("Status Updated")
         window.location.reload()
         

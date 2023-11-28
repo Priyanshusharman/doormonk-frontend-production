@@ -26,15 +26,20 @@ const Barberregister = () => {
     const [price, setPrice] = useState("")
     const navigate = useNavigate();
     const onSnameChange = (e) => {
-        console.log(e.target.value)
+
         setSname(e.target.value)
     }
     const onPriceChange = (e) => {
-        console.log(e.target.value)
+
         setPrice(e.target.value)
     }
     const handleClick = () => {
         navigate("/barberhome");
+    }
+    function titleCase(str) {
+        return str.toLowerCase().split(' ').map(function (word) {
+            return (word.charAt(0).toUpperCase() + word.slice(1));
+        }).join(' ');
     }
     const handelSubmit = async () => {
         if(services.length===0)
@@ -45,10 +50,11 @@ const Barberregister = () => {
         const arr = selected.map(item => {
             return item.value
         })
+        const str=titleCase(barber.city)
         const response = await fetch("http://localhost:5000/api/barberauth/createbarber", {
             method: "post",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ...barber, workingdays: arr, services: services })
+            body: JSON.stringify({ ...barber, workingdays: arr, services: services,city:str })
         })
         const json = await response.json()
         if (json.success) {
@@ -75,8 +81,44 @@ const Barberregister = () => {
         var obj = {};
         obj[sname] = price;
         setServices(services.concat(obj))
-        console.log(services)
+
     }
+    let state = [ "Andhra Pradesh",
+                "Arunachal Pradesh",
+                "Assam",
+                "Bihar",
+                "Chhattisgarh",
+                "Goa",
+                "Gujarat",
+                "Haryana",
+                "Himachal Pradesh",
+                "Jammu and Kashmir",
+                "Jharkhand",
+                "Karnataka",
+                "Kerala",
+                "Madhya Pradesh",
+                "Maharashtra",
+                "Manipur",
+                "Meghalaya",
+                "Mizoram",
+                "Nagaland",
+                "Odisha",
+                "Punjab",
+                "Rajasthan",
+                "Sikkim",
+                "Tamil Nadu",
+                "Telangana",
+                "Tripura",
+                "Uttarakhand",
+                "Uttar Pradesh",
+                "West Bengal",
+                "Andaman and Nicobar Islands",
+                "Chandigarh",
+                "Dadra and Nagar Haveli",
+                "Daman and Diu",
+                "Delhi",
+                "Lakshadweep",
+                "Puducherry"]
     return (
         <div className='container h-100'>
             <div className='row'>
@@ -131,12 +173,9 @@ const Barberregister = () => {
                                 <label htmlFor="state" className="form-label text-light d-flex">State</label>
                                 <select value={barber.state} onChange={onChange} id="state" name='state' className="form-select">
                                     <option value>Choose...</option>
-                                    <option>Uttarakhand</option>
-                                    <option>Uttar Pradesh</option>
-                                    <option>Delhi</option>
-                                    <option>Bihar</option>
-                                    <option>....</option>
-                                    {/*"Use map in future"*/}
+                                    {state.map(s=>{
+                                        return(<option>{s}</option>)
+                                    })}
                                 </select>
                             </div>
                             <div className="col-md-2">

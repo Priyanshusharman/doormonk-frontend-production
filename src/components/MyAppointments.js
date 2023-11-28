@@ -18,7 +18,7 @@ const MyAppointments = () => {
         id: ""
     })
     const onStatusChange = (e) => {
-        console.log(e.target.value)
+
         setStatus(e.target.value)
     }
     const updateAppointment = (currentAppointment) => {
@@ -36,7 +36,7 @@ const MyAppointments = () => {
     const reviewAppointment = (currentAppointment) => {
         setModal("Review")
         ref.current.click()
-        console.log(currentAppointment.barber)
+
         setReview({
             reviews: "",
             ratings: "",

@@ -25,11 +25,11 @@ const DashboardB = () => {
     const [price, setPrice] = useState("")
     const navigate = useNavigate();
     const onSnameChange = (e) => {
-        console.log(e.target.value)
+
         setSname(e.target.value)
     }
     const onPriceChange = (e) => {
-        console.log(e.target.value)
+
         setPrice(e.target.value)
     }
     const handleClick = () => {
@@ -56,7 +56,7 @@ const DashboardB = () => {
         window.location.reload()
     }
     const onChange = (e) => {
-        console.log(e.target.value)
+
         setBarber({
             ...barber,
             [e.target.name]: e.target.value
@@ -72,7 +72,7 @@ const DashboardB = () => {
         var obj = {};
         obj[sname] = price;
         setServices(services.concat(obj))
-        console.log(services)
+
     }
     const[user,setUser]=useState({})
     useEffect(() => {

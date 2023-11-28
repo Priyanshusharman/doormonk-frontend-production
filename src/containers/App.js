@@ -30,6 +30,7 @@ import {
     Routes,
     Route
 } from "react-router-dom";
+import Footer from "../components/Footer/Footer";
 class App extends Component {
     constructor() {
         super();
@@ -128,7 +129,7 @@ class App extends Component {
                                         <DashboardB /></>} />
 
                                 </Routes>
-
+                                        <Footer/>
                             </div >
                         </Router>
                     </AppointmentState>

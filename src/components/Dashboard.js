@@ -27,7 +27,7 @@ const Dashboard = () => {
             body: JSON.stringify({ name: user.name, email: user.email }),
         });
         const json=await response.json();
-        console.log(json)
+
         if(json.errors)
         {
             alert("Enter valid details")
@@ -45,7 +45,7 @@ const Dashboard = () => {
             })
             const json = await response.json()
             setUser({ name: json.name, email: json.email, uses: json.uses })
-            console.log(json)
+
         }
         getUser()
     }, [])

@@ -42,7 +42,6 @@ const Shops = () => {
     const onDateChange = (e) => {
         const date = new Date(e.target.value)
         const day = date.getDay();
-        console.log(days[day])
         setDate(days[day])
     }
     const onBook = (id) => {
@@ -59,7 +58,6 @@ const Shops = () => {
             body: JSON.stringify({ city: city, date: date }),
         });
         const json = await response.json()
-        console.log(json)
         setShops(json)
     }
     return (

@@ -87,7 +87,7 @@ const BookingDetails = ({ id }) => {
         navigate("/barberhome");
     }*/
     const handelSubmit = async () => {
-        console.log(details)
+
         if(added.length===0)
         {
             alert("Please select atleast one service")
@@ -140,7 +140,7 @@ const BookingDetails = ({ id }) => {
             return
         }
         setPage("Services")
-        console.log("clicked")
+
     }
     const onPrev = () => {
         setPage("Details")

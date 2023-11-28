@@ -62,7 +62,7 @@ const AppointmentState = (props) => {
             },
             body: JSON.stringify({ name, phone, services, email, address, time, date, servicetype, added, total }),
         });
-        console.log("Adding a new appointment")
+
         const appointment = response.json()
         setAppointments(appointments.concat(appointment))
         return true
@@ -76,9 +76,9 @@ const AppointmentState = (props) => {
                 "auth-token": localStorage.getItem("token")
             },
         });
-        console.log("Deleteing an appointment")
+
         const appointment = response.json()
-        console.log(appointment)
+
     }
 
     const editAppointment = async (id, date, time, services) => {

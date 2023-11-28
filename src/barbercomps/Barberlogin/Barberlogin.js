@@ -24,7 +24,7 @@ const Barberlogin = () => {
             body: JSON.stringify(barber)
         })
         const json = await response.json()
-        console.log(json)
+
         if (json.success) {
             localStorage.setItem("token", json.authtoken)
             handleClick()

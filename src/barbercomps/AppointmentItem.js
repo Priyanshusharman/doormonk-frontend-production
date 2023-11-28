@@ -12,9 +12,25 @@ const AppointmentItem = ({ appointment }) => {
             },
             body:JSON.stringify({id:id,status:status},)
         });
-        console.log("Updating an appointment")
+
         const appointment = response.json()
-        console.log(appointment)
+
+        alert("Status Updated")
+        window.location.reload()
+        
+    }
+    const markStatus2=async(id,status)=>{
+        const response = await fetch("http://localhost:5000/api/shops/completed", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token")
+            },
+            body:JSON.stringify({id:id,status:status},)
+        });
+
+        const appointment = response.json()
+
         alert("Status Updated")
         window.location.reload()
         
@@ -46,7 +62,7 @@ const AppointmentItem = ({ appointment }) => {
                     <p className="card-text"><span className='b'>Barber's Address</span>{": " + appointment.barberaddress}</p>
                     <p className="card-text"><span className='b'>Service Type</span>{": " + appointment.servicetype}</p>
                     <p className="card-text"><span className='b'>StatusByShop</span>{": " + appointment.shopconfirmation}</p>
-                    {appointment.status==="Pending"&&<>{appointment.shopconfirmation==="Canceled"?<><button onClick={() => markStatus(appointment._id,"Confirmed")}   style={{ borderRadius: "0.375rem" }} className="book-btn btn btn-primary ">Mark Confirmed</button></>:<><button   style={{ borderRadius: "0.375rem" }} className="book-btn btn btn-primary ">Mark Completed</button></>}
+                    {appointment.status==="Pending"&&<>{appointment.shopconfirmation==="Canceled"?<><button onClick={() => markStatus(appointment._id,"Confirmed")}   style={{ borderRadius: "0.375rem" }} className="book-btn btn btn-primary ">Mark Confirmed</button></>:<><button onClick={() => markStatus2(appointment._id,"Completed")}  style={{ borderRadius: "0.375rem" }} className="book-btn btn btn-primary ">Mark Completed</button></>}
                     <button onClick={() => markStatus(appointment._id,"Canceled")}  style={{ borderRadius: "0.375rem" }} className="book-btn btn btn-primary mx-2 ">Cancel</button></>}
 
                     

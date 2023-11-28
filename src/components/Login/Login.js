@@ -23,7 +23,7 @@ const Login = ({ loadUser, onRouteChange }) => {
             body: JSON.stringify({ email: signInEmail, password: signInPassword })
         })
         const json = await response.json()
-        console.log(json)
+
         if (json.success) {
             localStorage.setItem("token", json.authtoken)
             handleClick()

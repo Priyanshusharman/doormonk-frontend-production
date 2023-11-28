@@ -16,7 +16,7 @@ const AppointmentsB = () => {
             body: JSON.stringify({ bookingid:bookingId }),
         });
         const json = await response.json()
-        console.log(json)
+
         setAppointment(json)
     }
   return (

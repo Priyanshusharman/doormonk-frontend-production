@@ -11,7 +11,7 @@ const Reviews = () => {
             })
             const json = await response.json()
             setUser(json)
-            console.log(json)
+
         }
         getUser()
     }, [])

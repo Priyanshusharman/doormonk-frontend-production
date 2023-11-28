@@ -23,9 +23,9 @@ const Bookingbyday = () => {
             },
             body:JSON.stringify({date:date,status:status},)
         });
-        console.log("Updating an appointment")
+
         const appointment = response.json()
-        console.log(appointment)
+
         alert("Status Updated")
         window.location.reload()
         
