@@ -4,7 +4,7 @@ const Bookingbyday = () => {
     const [date,setDate]=useState("")
     const onDateChange=async(e)=>{
         setDate(e.target.value)
-        const response = await fetch("http://localhost:5000/api/shops/fetchappbyday", {
+        const response = await fetch("https://doormonk-mongo.onrender.com/api/shops/fetchappbyday", {
             method: "post",
             headers: { "Content-Type": "application/json",
         "auth-token":localStorage.getItem("token") },
@@ -15,7 +15,7 @@ const Bookingbyday = () => {
     }
     const [appointments,setAppointments]=useState([])
     const markStatus=async(date,status)=>{
-        const response = await fetch("http://localhost:5000/api/shops/shopstatusday", {
+        const response = await fetch("https://doormonk-mongo.onrender.com/api/shops/shopstatusday", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

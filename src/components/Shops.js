@@ -49,7 +49,7 @@ const Shops = () => {
         handleClick()
     }
     const onSearch = async () => {
-        const response = await fetch(`http://localhost:5000/api/shops/fetchallshops`, {
+        const response = await fetch(`https://doormonk-mongo.onrender.com/api/shops/fetchallshops`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -1,5 +1,5 @@
 import React from "react";
-import "/Users/aman/doormonk/src/components/Searchbox.css";
+import "../components/Searchbox.css";
 
 const SearchboxB = ({ onSearchChange }) => {
     return (

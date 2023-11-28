@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '/Users/aman/doormonk/src/components/Searchbox.css'
+import '../components/Searchbox.css'
 /*import { useNavigate } from 'react-router-dom'*/
 import { useContext } from 'react'
 import AppointmentContext from '../context/appointmentContext';
@@ -96,7 +96,7 @@ const BookingDetails = ({ id }) => {
         if (addAppointment(details.name, details.phone, details.services, details.email, details.address, details.time, details.date, details.servicetype, added, total)) {
             setInvalid(true)
         }
-        /*const response = await fetch("http://localhost:5000/api/barberauth/createbarber", {
+        /*const response = await fetch("https://doormonk-mongo.onrender.com/api/barberauth/createbarber", {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(details)
@@ -148,7 +148,7 @@ const BookingDetails = ({ id }) => {
 
     useEffect(() => {
         const onSearch = async () => {
-            const response = await fetch(`http://localhost:5000/api/shops/fetchprices`, {
+            const response = await fetch(`https://doormonk-mongo.onrender.com/api/shops/fetchprices`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

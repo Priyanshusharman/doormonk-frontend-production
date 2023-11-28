@@ -2,7 +2,7 @@ import { useState } from "react";
 import AppointmentContext from "./appointmentContext";
 
 const AppointmentState = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://doormonk-mongo.onrender.com"
     const [shopId, setShopId] = useState("")
     const [appointmentId, setAppointmentId] = useState("")
     const [added, setAdded] = useState([])

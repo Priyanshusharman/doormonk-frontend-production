@@ -4,7 +4,7 @@ const Reviews = () => {
     const [user, setUser] = useState({})
     useEffect(() => {
         const getUser = async () => {
-            const response = await fetch("http://localhost:5000/api/barberauth/getUser", {
+            const response = await fetch("https://doormonk-mongo.onrender.com/api/barberauth/getUser", {
                 method: "post",
                 headers: { "Content-Type": "application/json", "auth-token": localStorage.getItem("token") },
 

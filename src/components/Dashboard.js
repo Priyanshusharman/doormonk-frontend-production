@@ -18,7 +18,7 @@ const Dashboard = () => {
             window.location.reload();
             return
         }
-        const response=await fetch(`http://localhost:5000/api/auth/updateuser`, {
+        const response=await fetch(`https://doormonk-mongo.onrender.com/api/auth/updateuser`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -38,7 +38,7 @@ const Dashboard = () => {
     }
     useEffect(() => {
         const getUser = async () => {
-            const response = await fetch("http://localhost:5000/api/auth/getUser", {
+            const response = await fetch("https://doormonk-mongo.onrender.com/api/auth/getUser", {
                 method: "post",
                 headers: { "Content-Type": "application/json", "auth-token": localStorage.getItem("token") },
 

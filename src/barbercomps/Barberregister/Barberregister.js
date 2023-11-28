@@ -51,7 +51,7 @@ const Barberregister = () => {
             return item.value
         })
         const str=titleCase(barber.city)
-        const response = await fetch("http://localhost:5000/api/barberauth/createbarber", {
+        const response = await fetch("https://doormonk-mongo.onrender.com/api/barberauth/createbarber", {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ...barber, workingdays: arr, services: services,city:str })

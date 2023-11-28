@@ -19,7 +19,7 @@ const Signup = ({ loadUser, onRouteChange }) => {
         navigate("/home");
     }
     const onSubmitSignUp = async () => {
-        const response = await fetch("http://localhost:5000/api/auth/createuser", {
+        const response = await fetch("https://doormonk-mongo.onrender.com/api/auth/createuser", {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

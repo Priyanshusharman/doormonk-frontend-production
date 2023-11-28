@@ -7,7 +7,7 @@ const ViewPrices = () => {
     useEffect(() => {
 
         const onSearch = async () => {
-            const response = await fetch(`http://localhost:5000/api/shops/fetchprices`, {
+            const response = await fetch(`https://doormonk-mongo.onrender.com/api/shops/fetchprices`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

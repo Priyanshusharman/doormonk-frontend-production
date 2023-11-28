@@ -17,7 +17,7 @@ const Login = ({ loadUser, onRouteChange }) => {
         navigate("/home");
     }
     const onSubmitLogIn = async () => {
-        const response = await fetch("http://localhost:5000/api/auth/login", {
+        const response = await fetch("https://doormonk-mongo.onrender.com/api/auth/login", {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: signInEmail, password: signInPassword })

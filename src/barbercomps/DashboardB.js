@@ -1,8 +1,8 @@
 import React, { useState,useEffect } from 'react'
-import '/Users/aman/doormonk/src/barbercomps/Barberregister/Barberregister.css'
+import '../barbercomps/Barberregister/Barberregister.css'
 import { useNavigate } from 'react-router-dom'
-import Barberregister2 from '/Users/aman/doormonk/src/barbercomps/Barberregister/Barberregister2.js'
-import ServiceItem from '/Users/aman/doormonk/src/barbercomps/ServiceItem.js'
+import Barberregister2 from '../barbercomps/Barberregister/Barberregister2.js'
+import ServiceItem from '../barbercomps/ServiceItem.js'
 const DashboardB = () => {
     const [barber, setBarber] = useState({
         name:"",
@@ -39,7 +39,7 @@ const DashboardB = () => {
         const arr = selected.map(item => {
             return item.value
         })
-        const response = await fetch("http://localhost:5000/api/barberauth/ubworking", {
+        const response = await fetch("https://doormonk-mongo.onrender.com/api/barberauth/ubworking", {
             method: "put",
             headers: { "Content-Type": "application/json","auth-token": localStorage.getItem("token") },
             body: JSON.stringify({ name:barber.name,phone:barber.phone,website:barber.website,type:barber.type,email:barber.email,address:barber.address,city:barber.city,state:barber.state,zip:barber.zip,workingdays: arr,workinghoursfrom:barber.workinghoursfrom,workinghoursto:barber.workinghoursto})
@@ -77,7 +77,7 @@ const DashboardB = () => {
     const[user,setUser]=useState({})
     useEffect(() => {
         const getUser = async () => {
-            const response = await fetch("http://localhost:5000/api/barberauth/getUser", {
+            const response = await fetch("https://doormonk-mongo.onrender.com/api/barberauth/getUser", {
                 method: "post",
                 headers: { "Content-Type": "application/json", "auth-token": localStorage.getItem("token") },
 
