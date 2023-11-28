@@ -1,0 +1,54 @@
+.form-control {
+    background: transparent;
+    border-radius: 0px;
+    color: white;
+}
+
+.form-control:focus {
+    background: transparent;
+    border-radius: 0px;
+    color: white;
+    box-shadow: none;
+    border-color: white;
+}
+
+.form-control:valid {
+    background: transparent;
+    border-radius: 0px;
+    color: white;
+}
+
+.btn {
+    background: transparent;
+    border-radius: 0px;
+    border-color: white;
+}
+
+.btn:hover {
+    background: transparent;
+    border-radius: 0px;
+    border-color: white;
+}
+
+
+
+.form-select {
+    background: transparent;
+    border-radius: 0px;
+    color: white;
+}
+
+option {
+    color: black;
+}
+
+.btn-primary {
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: white;
+}
+
+.form-select:focus {
+    outline: none !important;
+    border: 1px solid white;
+    box-shadow: none;
+}

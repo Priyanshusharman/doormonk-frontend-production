@@ -1,0 +1,39 @@
+.form-control::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+    color: white;
+}
+
+.form-control::-ms-input-placeholder {
+    color: white;
+}
+
+.btn-primary {
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: white;
+
+}
+
+.btn-outline-secondary {
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: white;
+}
+
+
+.btn {
+    background: transparent;
+    color: white;
+    border-radius: 0px;
+    border-color: white;
+    font-weight: bold;
+}
+
+.btn:hover {
+    color: white;
+    background: transparent;
+    border-radius: 0px;
+    border-color: white;
+}

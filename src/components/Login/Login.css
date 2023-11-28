@@ -1,0 +1,26 @@
+input,
+select,
+textarea {
+    color: white;
+}
+
+.infoPlaceholder::-webkit-input-placeholder {
+    font-weight: bolder;
+    color: white;
+}
+
+.infoPlaceholder::-moz-placeholder {
+    font-weight: bolder;
+    color: white;
+}
+
+.infoPlaceholder::-ms-input-placeholder {
+    font-weight: bolder;
+    color: white;
+}
+
+a,
+a:active,
+a:focus {
+    outline: none !important;
+}
